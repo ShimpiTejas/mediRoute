@@ -1,158 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pruthinee GLOHive - Your Pathway to Medical Excellence</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1a56db',
-                        secondary: '#0e4c92',
-                        accent: '#00a8e8',
-                        light: '#f0f7ff'
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a56db",
+              secondary: "#0e4c92",
+              accent: "#00a8e8",
+              light: "#f0f7ff",
+            },
+          },
+        },
+      };
     </script>
     <style>
-        .hero-bg {
-            background: linear-gradient(rgba(10, 40, 100, 0.85), rgba(10, 40, 100, 0.85)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .testimonial-card {
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .stat-card {
-            transition: all 0.3s ease;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-3px);
-        }
-        
-        .nav-link::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: white;
-            transition: width 0.3s;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .active-nav::after {
-            width: 100%;
-        }
+      .hero-bg {
+        background: linear-gradient(
+            rgba(10, 40, 100, 0.85),
+            rgba(10, 40, 100, 0.85)
+          ),
+          url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-card {
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      .stat-card {
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-3px);
+      }
+
+      .nav-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: width 0.3s;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .active-nav::after {
+        width: 100%;
+      }
     </style>
-</head>
-<body class="font-sans">
+  </head>
+  <body class="font-sans">
     <!-- Header/Navigation -->
     <header class="fixed w-full bg-white shadow-md z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center">
-                <div class="bg-primary w-10 h-10 rounded-full flex items-center justify-center">
-                    <i class="fas fa-heartbeat text-white text-xl"></i>
-                </div>
-                <h1 class="ml-3 text-2xl font-bold text-primary">Pruthinee <span class="text-accent">GLOHive</span></h1>
-            </div>
-            
-            <nav class="hidden md:flex space-x-8">
-                <a href="#" class="text-gray-700 hover:text-primary font-medium nav-link active-nav">Home</a>
-                <a href="#services" class="text-gray-700 hover:text-primary font-medium nav-link">Services</a>
-                <a href="#about" class="text-gray-700 hover:text-primary font-medium nav-link">About</a>
-                <a href="#universities" class="text-gray-700 hover:text-primary font-medium nav-link">Universities</a>
-                <a href="#testimonials" class="text-gray-700 hover:text-primary font-medium nav-link">Testimonials</a>
-                <a href="#contact" class="text-gray-700 hover:text-primary font-medium nav-link">Contact</a>
-            </nav>
-            
-            <div class="hidden md:block">
-                <button class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition duration-300">Apply Now</button>
-            </div>
-            
-            <button id="mobile-menu-button" class="md:hidden text-gray-700">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <div
+            class="bg-primary w-10 h-10 rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-heartbeat text-white text-xl"></i>
+          </div>
+          <h1 class="ml-3 text-2xl font-bold text-primary">
+            Pruthinee <span class="text-accent">GLOHive</span>
+          </h1>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 absolute top-full left-0 right-0 shadow-lg">
-            <div class="flex flex-col space-y-4">
-                <a href="#" class="text-gray-700 hover:text-primary font-medium">Home</a>
-                <a href="#services" class="text-gray-700 hover:text-primary font-medium">Services</a>
-                <a href="#about" class="text-gray-700 hover:text-primary font-medium">About</a>
-                <a href="#universities" class="text-gray-700 hover:text-primary font-medium">Universities</a>
-                <a href="#testimonials" class="text-gray-700 hover:text-primary font-medium">Testimonials</a>
-                <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Contact</a>
-                <button class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition duration-300 w-full">Apply Now</button>
-            </div>
+
+        <nav class="hidden md:flex space-x-8">
+          <a
+            href="#home"
+            class="text-gray-700 hover:text-primary font-medium nav-link active-nav"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="text-gray-700 hover:text-primary font-medium nav-link"
+            >Services</a
+          >
+          <!-- <a
+            href="#about"
+            class="text-gray-700 hover:text-primary font-medium nav-link"
+            >About</a
+          > -->
+          <a
+            href="#countries"
+            class="text-gray-700 hover:text-primary font-medium nav-link"
+            >Countries</a
+          >
+          <!-- <a
+            href="#testimonials"
+            class="text-gray-700 hover:text-primary font-medium nav-link"
+            >Testimonials</a
+          > -->
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-primary font-medium nav-link"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="hidden md:block">
+          <button
+            class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition duration-300"
+          >
+            Apply Now
+          </button>
         </div>
+
+        <button id="mobile-menu-button" class="md:hidden text-gray-700">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white py-4 px-4 absolute top-full left-0 right-0 shadow-lg"
+      >
+        <div class="flex flex-col space-y-4">
+          <a href="#home" class="text-gray-700 hover:text-primary font-medium"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="text-gray-700 hover:text-primary font-medium"
+            >Services</a
+          >
+          <!-- <a href="#about" class="text-gray-700 hover:text-primary font-medium"
+            >About</a
+          > -->
+          <a
+            href="#countries"
+            class="text-gray-700 hover:text-primary font-medium"
+            >Countries</a
+          >
+          <!-- <a
+            href="#testimonials"
+            class="text-gray-700 hover:text-primary font-medium"
+            >Testimonials</a
+          > -->
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-primary font-medium"
+            >Contact</a
+          >
+          <button
+            class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition duration-300 w-full"
+          >
+            Apply Now
+          </button>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero-bg pt-32 pb-20 text-white">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Your Pathway to a Successful Medical Career</h1>
-                <p class="text-xl mb-8 opacity-90">Pruthinee GLOHive provides personalized guidance for students seeking quality medical education worldwide.</p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <button class="bg-accent hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-lg transition duration-300">Get Started</button>
-                    <button class="bg-transparent border-2 border-white hover:bg-white hover:text-primary font-bold py-3 px-8 rounded-lg transition duration-300">Learn More</button>
-                </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center">
-                <div class="bg-white rounded-xl shadow-2xl p-6 max-w-md w-full">
-                    <h3 class="text-2xl font-bold text-primary mb-6 text-center">Free Career Consultation</h3>
-                    <form>
-                        <div class="mb-4">
-                            <input type="text" placeholder="Full Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                        </div>
-                        <div class="mb-4">
-                            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                        </div>
-                        <div class="mb-4">
-                            <input type="tel" placeholder="Phone Number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                        </div>
-                        <div class="mb-4">
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                                <option>Select Course</option>
-                                <option>MBBS</option>
-                                <option>BDS</option>
-                                <option>MD/MS</option>
-                                <option>Nursing</option>
-                                <option>Allied Health Sciences</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition duration-300">Submit</button>
-                    </form>
-                </div>
-            </div>
+      <div
+        class="container mx-auto px-4 flex flex-col md:flex-row items-center"
+      >
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            Your Pathway to a Successful Medical Career
+          </h1>
+          <p class="text-xl mb-8 opacity-90">
+            Pruthinee GLOHive provides personalized guidance for students
+            seeking quality medical education worldwide.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+          >
+            <button
+              class="bg-accent hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-lg transition duration-300"
+            >
+              Get Started
+            </button>
+            <button
+              class="bg-transparent border-2 border-white hover:bg-white hover:text-primary font-bold py-3 px-8 rounded-lg transition duration-300"
+            >
+              Learn More
+            </button>
+          </div>
         </div>
+        <div class="md:w-1/2 flex justify-center">
+          <div class="bg-white rounded-xl shadow-2xl p-6 max-w-md w-full">
+            <h3 class="text-2xl font-bold text-primary mb-6 text-center">
+              Free Career Consultation
+            </h3>
+            <form>
+              <div class="mb-4">
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+              <div class="mb-4">
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+              <div class="mb-4">
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+              <div class="mb-4">
+                <select
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  <option>Select Course</option>
+                  <option>MBBS</option>
+                  <option>BDS</option>
+                  <option>MD/MS</option>
+                  <option>Nursing</option>
+                  <option>Allied Health Sciences</option>
+                </select>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition duration-300"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="py-12 bg-light">
+    <!-- <section class="py-12 bg-light">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div class="stat-card bg-white rounded-xl shadow-md p-6 text-center">
@@ -173,88 +279,129 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Services Section -->
     <section id="services" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Comprehensive Services</h2>
-                <p class="text-gray-600 text-lg">We provide end-to-end guidance for your medical education journey</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card bg-light rounded-2xl p-8 transition-all duration-300">
-                    <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">University Selection</h3>
-                    <p class="text-gray-600 mb-4">Expert guidance to choose the best university based on your preferences, budget, and career goals.</p>
-                    <a href="#" class="text-primary font-medium flex items-center">
-                        Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                    </a>
-                </div>
-                
-                <div class="service-card bg-light rounded-2xl p-8 transition-all duration-300">
-                    <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-file-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Admission Assistance</h3>
-                    <p class="text-gray-600 mb-4">End-to-end support for application process, documentation, and interview preparation.</p>
-                    <a href="#" class="text-primary font-medium flex items-center">
-                        Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                    </a>
-                </div>
-                
-                <div class="service-card bg-light rounded-2xl p-8 transition-all duration-300">
-                    <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-passport text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Visa Processing</h3>
-                    <p class="text-gray-600 mb-4">Professional assistance with visa application, documentation, and interview preparation.</p>
-                    <a href="#" class="text-primary font-medium flex items-center">
-                        Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                    </a>
-                </div>
-                
-                <div class="service-card bg-light rounded-2xl p-8 transition-all duration-300">
-                    <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-home text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Accommodation</h3>
-                    <p class="text-gray-600 mb-4">Assistance in finding safe and comfortable accommodation near your university campus.</p>
-                    <a href="#" class="text-primary font-medium flex items-center">
-                        Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                    </a>
-                </div>
-                
-                <div class="service-card bg-light rounded-2xl p-8 transition-all duration-300">
-                    <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-plane text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Travel Assistance</h3>
-                    <p class="text-gray-600 mb-4">Support with travel arrangements, airport pickup, and orientation upon arrival.</p>
-                    <a href="#" class="text-primary font-medium flex items-center">
-                        Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                    </a>
-                </div>
-                
-                <div class="service-card bg-light rounded-2xl p-8 transition-all duration-300">
-                    <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-book-medical text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Licensing Exam Prep</h3>
-                    <p class="text-gray-600 mb-4">Preparation guidance for licensing exams like USMLE, PLAB, FMGE, and others.</p>
-                    <a href="#" class="text-primary font-medium flex items-center">
-                        Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                    </a>
-                </div>
-            </div>
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Our Comprehensive Services
+          </h2>
+          <p class="text-gray-600 text-lg">
+            We provide end-to-end guidance for your medical education journey
+          </p>
         </div>
+
+        <div class="flex flex-wrap justify-center gap-8">
+          <!-- Card 1 -->
+          <div
+            class="service-card bg-light rounded-2xl p-8 w-full sm:w-[45%] lg:w-[30%] transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-graduation-cap text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              University Selection
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Expert guidance to choose the best university based on your
+              preferences, budget, and career goals.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="service-card bg-light rounded-2xl p-8 w-full sm:w-[45%] lg:w-[30%] transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-file-alt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              Admission Assistance
+            </h3>
+            <p class="text-gray-600 mb-4">
+              End-to-end support for application process, documentation, and
+              interview preparation.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="service-card bg-light rounded-2xl p-8 w-full sm:w-[45%] lg:w-[30%] transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-passport text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              Visa Processing
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Professional assistance with visa application, documentation, and
+              interview preparation.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="service-card bg-light rounded-2xl p-8 w-full sm:w-[45%] lg:w-[30%] transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-home text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Accommodation</h3>
+            <p class="text-gray-600 mb-4">
+              Assistance in finding safe and comfortable accommodation near your
+              university campus.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="service-card bg-light rounded-2xl p-8 w-full sm:w-[45%] lg:w-[30%] transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-plane text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              Travel Assistance
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Support with travel arrangements, airport pickup, and orientation
+              upon arrival.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gradient-to-b from-light to-white">
+    <!-- <section id="about" class="py-20 bg-gradient-to-b from-light to-white">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-12 md:mb-0">
@@ -306,335 +453,696 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <!-- Universities Section -->
+    <!-- Universities Section
     <section id="universities" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Top Partner Universities</h2>
-                <p class="text-gray-600 text-lg">We partner with prestigious medical universities around the world</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-                    <div class="bg-gray-200 border-2 border-dashed w-full h-48"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Harvard Medical School</h3>
-                        <div class="flex items-center text-gray-600 mb-4">
-                            <i class="fas fa-map-marker-alt mr-2"></i>
-                            <span>USA</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Ranked #1 in the world for medicine, offering cutting-edge research opportunities.</p>
-                        <button class="text-primary font-medium">View Details</button>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-                    <div class="bg-gray-200 border-2 border-dashed w-full h-48"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">University of Oxford</h3>
-                        <div class="flex items-center text-gray-600 mb-4">
-                            <i class="fas fa-map-marker-alt mr-2"></i>
-                            <span>UK</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">World-renowned medical program with a rich history of medical breakthroughs.</p>
-                        <button class="text-primary font-medium">View Details</button>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-                    <div class="bg-gray-200 border-2 border-dashed w-full h-48"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Karolinska Institute</h3>
-                        <div class="flex items-center text-gray-600 mb-4">
-                            <i class="fas fa-map-marker-alt mr-2"></i>
-                            <span>Sweden</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Home of the Nobel Prize in Medicine, offering innovative medical education.</p>
-                        <button class="text-primary font-medium">View Details</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <button class="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-secondary transition duration-300">View All Universities</button>
-            </div>
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Top Partner Universities
+          </h2>
+          <p class="text-gray-600 text-lg">
+            We partner with prestigious medical universities around the world
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300"
+          >
+            <div class="bg-gray-200 border-2 border-dashed w-full h-48"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Harvard Medical School
+              </h3>
+              <div class="flex items-center text-gray-600 mb-4">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                <span>USA</span>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Ranked #1 in the world for medicine, offering cutting-edge
+                research opportunities.
+              </p>
+              <button class="text-primary font-medium">View Details</button>
+            </div>
+          </div>
+
+          <div
+            class="border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300"
+          >
+            <div class="bg-gray-200 border-2 border-dashed w-full h-48"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                University of Oxford
+              </h3>
+              <div class="flex items-center text-gray-600 mb-4">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                <span>UK</span>
+              </div>
+              <p class="text-gray-600 mb-4">
+                World-renowned medical program with a rich history of medical
+                breakthroughs.
+              </p>
+              <button class="text-primary font-medium">View Details</button>
+            </div>
+          </div>
+
+          <div
+            class="border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300"
+          >
+            <div class="bg-gray-200 border-2 border-dashed w-full h-48"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Karolinska Institute
+              </h3>
+              <div class="flex items-center text-gray-600 mb-4">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                <span>Sweden</span>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Home of the Nobel Prize in Medicine, offering innovative medical
+                education.
+              </p>
+              <button class="text-primary font-medium">View Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <button
+            class="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-secondary transition duration-300"
+          >
+            View All Universities
+          </button>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Countries Marquee Section -->
+    <section id="countries" class="py-20 bg-white overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Explore Top Study Destinations
+          </h2>
+          <p class="text-gray-600 text-lg">
+            We guide you to the best medical universities across these countries
+          </p>
+        </div>
+
+        <div class="relative overflow-hidden">
+          <div class="flex gap-24 animate-marquee whitespace-nowrap">
+            <!-- Repeat this block twice for seamless looping -->
+            <div class="flex gap-24">
+              <div
+                class="flex-shrink-0 flex flex-col items-center min-w-[200px]"
+              >
+                <img
+                  src="https://flagcdn.com/w320/kg.png"
+                  alt="Kyrgyzstan"
+                  class="w-40 h-28 object-contain rounded-xl shadow-lg mb-3"
+                />
+                <span class="text-xl font-semibold text-gray-700"
+                  >Kyrgyzstan</span
+                >
+              </div>
+              <div
+                class="flex-shrink-0 flex flex-col items-center min-w-[200px]"
+              >
+                <img
+                  src="https://flagcdn.com/w320/ru.png"
+                  alt="Russia"
+                  class="w-40 h-28 object-contain rounded-xl shadow-lg mb-3"
+                />
+                <span class="text-xl font-semibold text-gray-700">Russia</span>
+              </div>
+              <div
+                class="flex-shrink-0 flex flex-col items-center min-w-[200px]"
+              >
+                <img
+                  src="https://flagcdn.com/w320/ge.png"
+                  alt="Georgia"
+                  class="w-40 h-28 object-contain rounded-xl shadow-lg mb-3"
+                />
+                <span class="text-xl font-semibold text-gray-700">Georgia</span>
+              </div>
+              <div
+                class="flex-shrink-0 flex flex-col items-center min-w-[200px]"
+              >
+                <img
+                  src="https://flagcdn.com/w320/uz.png"
+                  alt="Uzbekistan"
+                  class="w-40 h-28 object-contain rounded-xl shadow-lg mb-3"
+                />
+                <span class="text-xl font-semibold text-gray-700"
+                  >Uzbekistan</span
+                >
+              </div>
+              <div
+                class="flex-shrink-0 flex flex-col items-center min-w-[200px]"
+              >
+                <img
+                  src="https://flagcdn.com/w320/by.png"
+                  alt="Belarus"
+                  class="w-40 h-28 object-contain rounded-xl shadow-lg mb-3"
+                />
+                <span class="text-xl font-semibold text-gray-700">Belarus</span>
+              </div>
+            </div>
+
+            <!-- Duplicate for seamless loop -->
+            <div class="flex gap-24">
+              <div
+                class="flex-shrink-0 flex flex-col items-center min-w-[200px]"
+              >
+                <img
+                  src="https://flagcdn.com/w320/kg.png"
+                  alt="Kyrgyzstan"
+                  class="w-40 h-28 object-contain rounded-xl shadow-lg mb-3"
+                />
+                <span class="text-xl font-semibold text-gray-700"
+                  >Kyrgyzstan</span
+                >
+              </div>
+              <div
+                class="flex-shrink-0 flex flex-col items-center min-w-[200px]"
+              >
+                <img
+                  src="https://flagcdn.com/w320/ru.png"
+                  alt="Russia"
+                  class="w-40 h-28 object-contain rounded-xl shadow-lg mb-3"
+                />
+                <span class="text-xl font-semibold text-gray-700">Russia</span>
+              </div>
+              <div
+                class="flex-shrink-0 flex flex-col items-center min-w-[200px]"
+              >
+                <img
+                  src="https://flagcdn.com/w320/ge.png"
+                  alt="Georgia"
+                  class="w-40 h-28 object-contain rounded-xl shadow-lg mb-3"
+                />
+                <span class="text-xl font-semibold text-gray-700">Georgia</span>
+              </div>
+              <div
+                class="flex-shrink-0 flex flex-col items-center min-w-[200px]"
+              >
+                <img
+                  src="https://flagcdn.com/w320/uz.png"
+                  alt="Uzbekistan"
+                  class="w-40 h-28 object-contain rounded-xl shadow-lg mb-3"
+                />
+                <span class="text-xl font-semibold text-gray-700"
+                  >Uzbekistan</span
+                >
+              </div>
+              <div
+                class="flex-shrink-0 flex flex-col items-center min-w-[200px]"
+              >
+                <img
+                  src="https://flagcdn.com/w320/by.png"
+                  alt="Belarus"
+                  class="w-40 h-28 object-contain rounded-xl shadow-lg mb-3"
+                />
+                <span class="text-xl font-semibold text-gray-700">Belarus</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials Section
     <section id="testimonials" class="py-20 bg-light">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Student Success Stories</h2>
-                <p class="text-gray-600 text-lg">Hear from our students who achieved their dreams with Pruthinee GLOHive</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="testimonial-card bg-white rounded-xl p-8 shadow-md">
-                    <div class="text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 mb-6">"Pruthinee GLOHive helped me get into my dream university in the UK. Their guidance through the entire application process was invaluable."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gray-200 border-2 border-dashed rounded-full mr-4"></div>
-                        <div>
-                            <div class="font-bold text-gray-800">Rahul Sharma</div>
-                            <div class="text-gray-600">MBBS Student, Cambridge University</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card bg-white rounded-xl p-8 shadow-md">
-                    <div class="text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 mb-6">"The visa assistance from Pruthinee GLOHive made what seemed like a complicated process very straightforward. I'm now studying medicine in Germany!"</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gray-200 border-2 border-dashed rounded-full mr-4"></div>
-                        <div>
-                            <div class="font-bold text-gray-800">Priya Patel</div>
-                            <div class="text-gray-600">MBBS Student, Heidelberg University</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card bg-white rounded-xl p-8 shadow-md">
-                    <div class="text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 mb-6">"Thanks to Pruthinee GLOHive's counseling, I found the perfect medical program that matched my career goals and budget. Highly recommended!"</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gray-200 border-2 border-dashed rounded-full mr-4"></div>
-                        <div>
-                            <div class="font-bold text-gray-800">Amit Kumar</div>
-                            <div class="text-gray-600">MD Student, Johns Hopkins</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Student Success Stories
+          </h2>
+          <p class="text-gray-600 text-lg">
+            Hear from our students who achieved their dreams with Pruthinee
+            GLOHive
+          </p>
         </div>
-    </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="testimonial-card bg-white rounded-xl p-8 shadow-md">
+            <div class="text-yellow-400 mb-4">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "Pruthinee GLOHive helped me get into my dream university in the
+              UK. Their guidance through the entire application process was
+              invaluable."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-200 border-2 border-dashed rounded-full mr-4"
+              ></div>
+              <div>
+                <div class="font-bold text-gray-800">Rahul Sharma</div>
+                <div class="text-gray-600">
+                  MBBS Student, Cambridge University
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card bg-white rounded-xl p-8 shadow-md">
+            <div class="text-yellow-400 mb-4">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "The visa assistance from Pruthinee GLOHive made what seemed like
+              a complicated process very straightforward. I'm now studying
+              medicine in Germany!"
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-200 border-2 border-dashed rounded-full mr-4"
+              ></div>
+              <div>
+                <div class="font-bold text-gray-800">Priya Patel</div>
+                <div class="text-gray-600">
+                  MBBS Student, Heidelberg University
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card bg-white rounded-xl p-8 shadow-md">
+            <div class="text-yellow-400 mb-4">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "Thanks to Pruthinee GLOHive's counseling, I found the perfect
+              medical program that matched my career goals and budget. Highly
+              recommended!"
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-200 border-2 border-dashed rounded-full mr-4"
+              ></div>
+              <div>
+                <div class="font-bold text-gray-800">Amit Kumar</div>
+                <div class="text-gray-600">MD Student, Johns Hopkins</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
 
     <!-- CTA Section -->
     <section class="py-20 bg-primary text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Medical Journey?</h2>
-            <p class="text-xl max-w-3xl mx-auto mb-10 opacity-90">Join thousands of successful medical professionals who started their journey with Pruthinee GLOHive</p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <button class="bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300">Book Free Consultation</button>
-                <button class="bg-transparent border-2 border-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-primary transition duration-300">Contact Us</button>
-            </div>
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Ready to Start Your Medical Journey?
+        </h2>
+        <p class="text-xl max-w-3xl mx-auto mb-10 opacity-90">
+          Join thousands of successful medical professionals who started their
+          journey with Pruthinee GLOHive
+        </p>
+        <div
+          class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
+        >
+          <button
+            class="bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300"
+          >
+            Book Free Consultation
+          </button>
+          <button
+            class="bg-transparent border-2 border-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-primary transition duration-300"
+          >
+            Contact Us
+          </button>
         </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Get in Touch</h2>
-                    <p class="text-gray-600 mb-8">Have questions about medical education opportunities? Our expert counselors are here to help you.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-gray-800 mb-2">Our Office</h4>
-                                <p class="text-gray-600">123 Medical Plaza, Suite 500<br>New Delhi, India 110001</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-gray-800 mb-2">Phone</h4>
-                                <p class="text-gray-600">+91 98765 43210<br>+91 11 2345 6789</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-gray-800 mb-2">Email</h4>
-                                <p class="text-gray-600">info@Pruthinee GLOHive.com<br>support@Pruthinee GLOHive.com</p>
-                            </div>
-                        </div>
-                    </div>
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+              Get in Touch
+            </h2>
+            <p class="text-gray-600 mb-8">
+              Have questions about medical education opportunities? Our expert
+              counselors are here to help you.
+            </p>
+
+            <div class="space-y-6">
+              <!-- <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4"
+                >
+                  <i class="fas fa-map-marker-alt"></i>
                 </div>
-                
-                <div class="md:w-1/2">
-                    <div class="bg-light rounded-xl p-8">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
-                        <form>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                                </div>
-                                <div>
-                                    <input type="email" placeholder="Your Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                                </div>
-                            </div>
-                            <div class="mb-6">
-                                <input type="text" placeholder="Subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                            </div>
-                            <div class="mb-6">
-                                <textarea placeholder="Your Message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition duration-300">Send Message</button>
-                        </form>
-                    </div>
+                <div>
+                  <h4 class="text-lg font-bold text-gray-800 mb-2">
+                    Our Office
+                  </h4>
+                  <p class="text-gray-600">
+                    123 Medical Plaza, Suite 500<br />New Delhi, India 110001
+                  </p>
                 </div>
+              </div> -->
+
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4"
+                >
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-gray-800 mb-2">Phone</h4>
+                  <p class="text-gray-600">
+                    +91 9059929442 
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4"
+                >
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-gray-800 mb-2">Email</h4>
+                  <p class="text-gray-600">
+                    pruthineeglohive@gmail.com
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div class="md:w-1/2">
+            <div class="bg-light rounded-xl p-8">
+              <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                Send Us a Message
+              </h3>
+              <form>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Your Email"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                </div>
+                <div class="mb-6">
+                  <input
+                    type="text"
+                    placeholder="Subject"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div class="mb-6">
+                  <textarea
+                    placeholder="Your Message"
+                    rows="5"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition duration-300"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-                <div>
-                    <div class="flex items-center mb-6">
-                        <div class="bg-primary w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fas fa-heartbeat text-white text-xl"></i>
-                        </div>
-                        <h1 class="ml-3 text-2xl font-bold">Pruthinee <span class="text-accent">GLOHive</span></h1>
-                    </div>
-                    <p class="text-gray-400 mb-6">Your trusted partner in medical education since 2008.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition duration-300">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition duration-300">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition duration-300">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
-                        <li><a href="#universities" class="text-gray-400 hover:text-white transition duration-300">Universities</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300">Testimonials</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-bold mb-6">Our Services</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">University Selection</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Admission Assistance</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Visa Processing</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Accommodation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Travel Assistance</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Licensing Exam Prep</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-bold mb-6">Newsletter</h3>
-                    <p class="text-gray-400 mb-4">Subscribe to get updates on medical education opportunities</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Your Email" class="px-4 py-3 w-full rounded-l-lg focus:outline-none">
-                        <button class="bg-primary px-4 rounded-r-lg">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <div class="flex items-center mb-6">
+              <div
+                class="bg-primary w-10 h-10 rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-heartbeat text-white text-xl"></i>
+              </div>
+              <h1 class="ml-3 text-2xl font-bold">
+                Pruthinee <span class="text-accent">GLOHive</span>
+              </h1>
             </div>
-            
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 Pruthinee GLOHive. All rights reserved.</p>
+            <p class="text-gray-400 mb-6">
+              Your trusted partner in medical education since 2008.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition duration-300"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition duration-300"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition duration-300"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
             </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#countries"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Countries</a
+                >
+              </li>
+              <!-- <li>
+                <a
+                  href="#testimonials"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Testimonials</a
+                >
+              </li> -->
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-6">Our Services</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >University Selection</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Admission Assistance</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Visa Processing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Accommodation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Travel Assistance</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Licensing Exam Prep</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-6">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Subscribe to get updates on medical education opportunities
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="Your Email"
+                class="px-4 py-3 w-full rounded-l-lg focus:outline-none"
+              />
+              <button class="bg-primary px-4 rounded-r-lg">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
         </div>
+
+        <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+          <p>&copy; 2023 Pruthinee GLOHive. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
-                }
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (event) => {
+        if (
+          !mobileMenu.contains(event.target) &&
+          !mobileMenuButton.contains(event.target)
+        ) {
+          mobileMenu.classList.add("hidden");
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 80,
+              behavior: "smooth",
             });
+
+            // Close mobile menu if open
+            mobileMenu.classList.add("hidden");
+          }
         });
-        
-        // Active nav link indicator
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        window.addEventListener('scroll', () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active-nav');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active-nav');
-                }
-            });
+      });
+
+      // Active nav link indicator
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute("id");
+          }
         });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active-nav");
+          if (link.getAttribute("href").includes(current)) {
+            link.classList.add("active-nav");
+          }
+        });
+      });
     </script>
-</body>
+
+    <!-- Tailwind animation (add to global CSS or Tailwind config if using custom animations) -->
+    <style>
+      @keyframes marquee {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-marquee {
+        animation: marquee 10s linear infinite;
+      }
+    </style>
+  </body>
 </html>
