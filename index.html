@@ -9,70 +9,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#1a56db",
-              secondary: "#0e4c92",
-              accent: "#00a8e8",
-              light: "#f0f7ff",
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      .hero-bg {
-        background: linear-gradient(
-            rgba(10, 40, 100, 0.85),
-            rgba(10, 40, 100, 0.85)
-          ),
-          url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
-        background-size: cover;
-        background-position: center;
-      }
-
-      .service-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-      }
-
-      .testimonial-card {
-        transition: all 0.3s ease;
-      }
-
-      .testimonial-card:hover {
-        transform: scale(1.03);
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-      }
-
-      .stat-card {
-        transition: all 0.3s ease;
-      }
-
-      .stat-card:hover {
-        transform: translateY(-3px);
-      }
-
-      .nav-link::after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 2px;
-        background: white;
-        transition: width 0.3s;
-      }
-
-      .nav-link:hover::after {
-        width: 100%;
-      }
-
-      .active-nav::after {
-        width: 100%;
-      }
-    </style>
+    <link rel="stylesheet" href="./Style.css" />
+    <script src="./script.js"></script>
   </head>
   <body class="font-sans">
     <!-- Header/Navigation -->
@@ -86,9 +24,13 @@
           >
             <i class="fas fa-heartbeat text-white text-xl"></i>
           </div>
-          <h1 class="ml-3 text-2xl font-bold text-primary">
-            Pruthinee <span class="text-accent">GLOHive</span>
-          </h1>
+          <a href="" class="flex items-center space-x-2">
+            <img
+              src="./LOGO 20.png"
+              alt="Pruthinee GLOHive Logo"
+              class="h-10 w-auto ml-3"
+            />
+          </a>
         </div>
 
         <nav class="hidden md:flex space-x-8">
@@ -128,7 +70,7 @@
           <button
             class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition duration-300"
           >
-            Apply Now
+            Book Free Consultation
           </button>
         </div>
 
@@ -146,24 +88,329 @@
           <a href="#home" class="text-gray-700 hover:text-primary font-medium"
             >Home</a
           >
-          <a
-            href="#services"
-            class="text-gray-700 hover:text-primary font-medium"
-            >Services</a
-          >
-          <!-- <a href="#about" class="text-gray-700 hover:text-primary font-medium"
-            >About</a
-          > -->
-          <a
-            href="#countries"
-            class="text-gray-700 hover:text-primary font-medium"
-            >Countries</a
-          >
-          <!-- <a
-            href="#testimonials"
-            class="text-gray-700 hover:text-primary font-medium"
-            >Testimonials</a
-          > -->
+
+          <!-- Services dropdown -->
+          <div>
+            <button
+              class="flex justify-between items-center w-full text-gray-700 hover:text-primary font-medium"
+              onclick="toggleMobileDropdown('servicesMobileDropdown')"
+            >
+              Services
+              <svg
+                class="w-4 h-4 ml-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="servicesMobileDropdown"
+              class="hidden flex flex-col ml-4 mt-2 space-y-2"
+            >
+              <a
+                href="#UniversitySelection"
+                class="text-gray-600 hover:text-primary pl-2"
+                >University Selection</a
+              >
+              <a
+                href="#AdmissionAssistance"
+                class="text-gray-600 hover:text-primary pl-2"
+                >Admission Assistance</a
+              >
+              <a
+                href="#VisaProcessing"
+                class="text-gray-600 hover:text-primary pl-2"
+                >Visa Processing</a
+              >
+              <a
+                href="#Accommodation"
+                class="text-gray-600 hover:text-primary pl-2"
+                >Accommodation</a
+              >
+              <a
+                href="#TravelAssistance"
+                class="text-gray-600 hover:text-primary pl-2"
+                >Travel Assistance</a
+              >
+              <a
+                href="#LicensingExamPrep"
+                class="text-gray-600 hover:text-primary pl-2"
+                >Licensing Exam Prep</a
+              >
+            </div>
+          </div>
+
+          <!-- Countries dropdown -->
+          <div>
+            <button
+              class="flex justify-between items-center w-full text-gray-700 hover:text-primary font-medium"
+              onclick="toggleMobileDropdown('countriesMobileDropdown')"
+            >
+              Countries
+              <svg
+                class="w-4 h-4 ml-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="countriesMobileDropdown"
+              class="hidden flex flex-col ml-4 mt-2 space-y-2"
+            >
+              <!-- Uzbekistan -->
+              <div>
+                <button
+                  class="flex justify-between items-center w-full text-gray-600 hover:text-primary pl-2"
+                  onclick="toggleMobileDropdown('uzbekistanDropdown')"
+                >
+                  Uzbekistan 🇺🇿
+                  <svg
+                    class="w-3 h-3 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  id="uzbekistanDropdown"
+                  class="hidden flex flex-col ml-4 mt-1 space-y-1"
+                >
+                  <a
+                    href="#SamarkandStateMedicalInstitute"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Samarkand State Medical Institute</a
+                  >
+                  <a
+                    href="#TashkentMedicalAcademyMainCampus"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Tashkent Medical Academy Main campus</a
+                  >
+                  <a
+                    href="#TashkentPediatricMedicalInstitute"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Tashkent Pediatric Medical Institute</a
+                  >
+                  <a
+                    href="#BukharaStateMedicalInstitute"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Bukhara State Medical Institute</a
+                  >
+                  <a
+                    href="#AndijanStateMedicalInstitute"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Andijan State Medical Institute</a
+                  >
+                  <a
+                    href="#UrgenchBranchTashkentMedicalAcademy"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Urgench Branch of Tashkent Medical Academy</a
+                  >
+                  <a
+                    href="#FerganaMedicalInstitutePublicHealth"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Fergana Medical Institute of Public Health</a
+                  >
+                  <a
+                    href="#AngrenUniversityFacultyMedicine"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Angren University Faculty of Medicine</a
+                  >
+                </div>
+              </div>
+
+              <!-- Russia -->
+              <div>
+                <button
+                  class="flex justify-between items-center w-full text-gray-600 hover:text-primary pl-2"
+                  onclick="toggleMobileDropdown('russiaDropdown')"
+                >
+                  Russia 🇷🇺
+                  <svg
+                    class="w-3 h-3 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  id="russiaDropdown"
+                  class="hidden flex flex-col ml-4 mt-1 space-y-1"
+                >
+                  <a
+                    href="#KubanStateMedicalUniversity"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Kuban State Medical University</a
+                  >
+                  <a
+                    href="#KabardinoBalkarianStateUniversity"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Kabardino Balkarian State University</a
+                  >
+                  <a
+                    href="#UlyanovskStateMedicalUniversity"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Ulyanovsk State Medical University</a
+                  >
+                  <a
+                    href="#NovgorodStateUniversity"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Novgorod State University Named After Yaroslav The Wise</a
+                  >
+                </div>
+              </div>
+
+              <!-- Kyrgyzstan -->
+              <div>
+                <button
+                  class="flex justify-between items-center w-full text-gray-600 hover:text-primary pl-2"
+                  onclick="toggleMobileDropdown('kyrgyzstanDropdown')"
+                >
+                  Kyrgyzstan 🇰🇬
+                  <svg
+                    class="w-3 h-3 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  id="kyrgyzstanDropdown"
+                  class="hidden flex flex-col ml-4 mt-1 space-y-1"
+                >
+                  <a
+                    href="#KyrgyzRussianSlavicUniversity"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Kyrgyz’s Russian Slavic University (KRSU)</a
+                  >
+                  <a
+                    href="#InternationalUniversityScienceMedicine"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >International University of Science & Medicine (IUSM)</a
+                  >
+                  <a
+                    href="#InternationalMedicalUniversity"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >International Medical University (IMU)</a
+                  >
+                </div>
+              </div>
+
+              <!-- Belarus -->
+              <div>
+                <button
+                  class="flex justify-between items-center w-full text-gray-600 hover:text-primary pl-2"
+                  onclick="toggleMobileDropdown('belarusDropdown')"
+                >
+                  Belarus 🇧🇾
+                  <svg
+                    class="w-3 h-3 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  id="belarusDropdown"
+                  class="hidden flex flex-col ml-4 mt-1 space-y-1"
+                >
+                  <a
+                    href="#BelarusStateMedicalUniversity"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Belarus State Medical University</a
+                  >
+                  <a
+                    href="#GomelStateMedicalUniversity"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Gomel State Medical University</a
+                  >
+                </div>
+              </div>
+
+              <!-- Georgia - Tbilisi -->
+              <div>
+                <button
+                  class="flex justify-between items-center w-full text-gray-600 hover:text-primary pl-2"
+                  onclick="toggleMobileDropdown('georgiaDropdown')"
+                >
+                  Georgia - Tbilisi 🇬🇪
+                  <svg
+                    class="w-3 h-3 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  id="georgiaDropdown"
+                  class="hidden flex flex-col ml-4 mt-1 space-y-1"
+                >
+                  <a
+                    href="#GrigolRobaoidzeUniversity"
+                    class="text-gray-500 hover:text-primary pl-2"
+                    >Grigol Robaoidze University (Gruni)</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
           <a
             href="#contact"
             class="text-gray-700 hover:text-primary font-medium"
@@ -179,82 +426,131 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-bg pt-32 pb-20 text-white">
-      <div
-        class="container mx-auto px-4 flex flex-col md:flex-row items-center"
-      >
-        <div class="md:w-1/2 mb-10 md:mb-0">
-          <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Your Pathway to a Successful Medical Career
-          </h1>
-          <p class="text-xl mb-8 opacity-90">
-            Pruthinee GLOHive provides personalized guidance for students
-            seeking quality medical education worldwide.
-          </p>
-          <div
-            class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+<section class="hero-bg pt-32 pb-20 text-white">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+    <!-- Left side content -->
+    <div class="md:w-1/2 mb-10 md:mb-0 ml-4 md:ml-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Your Pathway to a Successful Medical Career
+      </h1>
+      <p class="text-xl mb-8 opacity-90">
+        Pruthinee GLOHive provides personalized guidance for students seeking quality medical education worldwide.
+      </p>
+      <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+        <a href="./consultancy.html" class="inline-block" target="_blank">
+          <button
+            class="bg-accent hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out"
+            aria-label="Get Started"
           >
-            <button
-              class="bg-accent hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-lg transition duration-300"
-            >
-              Get Started
-            </button>
-            <button
-              class="bg-transparent border-2 border-white hover:bg-white hover:text-primary font-bold py-3 px-8 rounded-lg transition duration-300"
-            >
-              Learn More
-            </button>
-          </div>
-        </div>
-        <div class="md:w-1/2 flex justify-center">
-          <div class="bg-white rounded-xl shadow-2xl p-6 max-w-md w-full">
-            <h3 class="text-2xl font-bold text-primary mb-6 text-center">
-              Free Career Consultation
-            </h3>
-            <form>
-              <div class="mb-4">
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              <div class="mb-4">
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              <div class="mb-4">
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              <div class="mb-4">
-                <select
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                >
-                  <option>Select Course</option>
-                  <option>MBBS</option>
-                  <option>BDS</option>
-                  <option>MD/MS</option>
-                  <option>Nursing</option>
-                  <option>Allied Health Sciences</option>
-                </select>
-              </div>
-              <button
-                type="submit"
-                class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition duration-300"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
-        </div>
+            Get Started
+          </button>
+        </a>
+
+        <button
+          class="bg-transparent border-2 border-white hover:bg-white hover:text-primary font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out"
+          aria-label="Learn More"
+          onclick="document.querySelector('#learnMoreSection').scrollIntoView({ behavior: 'smooth' })"
+        >
+          Learn More
+        </button>
       </div>
+    </div>
+
+    <!-- Right side form -->
+    <div class="md:w-1/2 flex justify-center px-4 md:px-0">
+      <div class="bg-white rounded-xl shadow-2xl p-6 max-w-md w-full">
+        <h3 class="text-2xl font-bold text-blue-600 mb-6 text-center">
+          Free Career Consultation
+        </h3>
+
+        <!-- Form -->
+        <form
+          id="careerForm"
+          action="mailto:pruthineeglohive@gmail.com"
+          method="POST"
+          enctype="text/plain"
+          onsubmit="clearForm()"
+        >
+          <!-- Full Name -->
+          <div class="mb-4">
+            <input
+              type="text"
+              name="Full Name"
+              placeholder="Full Name"
+              required
+              class="w-full px-4 py-3 text-gray-800 placeholder-gray-500 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              aria-label="Full Name"
+            />
+          </div>
+
+          <!-- Email -->
+          <div class="mb-4">
+            <input
+              type="email"
+              name="Email"
+              placeholder="Email Address"
+              required
+              class="w-full px-4 py-3 text-gray-800 placeholder-gray-500 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              aria-label="Email Address"
+            />
+          </div>
+
+          <!-- Phone Number -->
+          <div class="mb-4">
+            <input
+              type="tel"
+              name="Phone Number"
+              placeholder="Phone Number"
+              required
+              class="w-full px-4 py-3 text-gray-800 placeholder-gray-500 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              aria-label="Phone Number"
+            />
+          </div>
+
+          <!-- Reference -->
+          <div class="mb-4">
+            <input
+              type="text"
+              name="Reference"
+              placeholder="Reference (e.g., Friends, Family)"
+              class="w-full px-4 py-3 text-gray-800 placeholder-gray-500 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              aria-label="Reference"
+            />
+          </div>
+
+          <!-- Select Service -->
+          <div class="mb-4">
+            <select
+              name="Service"
+              class="w-full px-4 py-3 text-gray-800 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              aria-label="Select Service"
+              required
+            >
+              <option disabled selected>Select Service</option>
+              <option>MBBS</option>
+              <option>BDS</option>
+              <option>MD/MS</option>
+              <option>Nursing</option>
+              <option>Allied Health Sciences</option>
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out"
+            aria-label="Submit Consultation Form"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
     </section>
 
     <!-- Stats Section -->
@@ -772,6 +1068,9 @@
         <h2 class="text-3xl md:text-4xl font-bold mb-6">
           Ready to Start Your Medical Journey?
         </h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Join us now and begin your journey with PruthineeGLOHive !
+        </h2>
         <p class="text-xl max-w-3xl mx-auto mb-10 opacity-90">
           Join thousands of successful medical professionals who started their
           journey with Pruthinee GLOHive
@@ -779,16 +1078,21 @@
         <div
           class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
         >
-          <button
-            class="bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300"
-          >
-            Book Free Consultation
-          </button>
-          <button
-            class="bg-transparent border-2 border-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-primary transition duration-300"
-          >
-            Contact Us
-          </button>
+          <a href="consultancy.html">
+            <button
+              class="bg-white text-blue-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300"
+            >
+              Book Free Consultation
+            </button>
+          </a>
+
+          <a href="#contact" class="inline-block">
+            <button
+              class="bg-transparent border-2 border-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-primary transition duration-300"
+            >
+              Contact Us
+            </button>
+          </a>
         </div>
       </div>
     </section>
@@ -796,107 +1100,129 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
       <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row">
-          <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+        <div
+          class="flex flex-col md:flex-row gap-12 animate-fade-in-down duration-1000 ease-out"
+        >
+          <!-- Contact Info Cards -->
+          <div class="md:w-1/2 space-y-6">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
               Get in Touch
             </h2>
-            <p class="text-gray-600 mb-8">
+            <p class="text-gray-600 mb-6">
               Have questions about medical education opportunities? Our expert
               counselors are here to help you.
             </p>
 
-            <div class="space-y-6">
-              <!-- <div class="flex items-start">
-                <div
-                  class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4"
-                >
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div>
-                  <h4 class="text-lg font-bold text-gray-800 mb-2">
-                    Our Office
-                  </h4>
-                  <p class="text-gray-600">
-                    123 Medical Plaza, Suite 500<br />New Delhi, India 110001
-                  </p>
-                </div>
-              </div> -->
-
-              <div class="flex items-start">
-                <div
-                  class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4"
-                >
-                  <i class="fas fa-phone-alt"></i>
-                </div>
-                <div>
-                  <h4 class="text-lg font-bold text-gray-800 mb-2">Phone</h4>
-                  <p class="text-gray-600">
-                    +91 9059929442 
-                  </p>
-                </div>
+            <!-- Phone Card -->
+            <div
+              class="flex items-start bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition duration-300"
+            >
+              <div
+                class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4 transform hover:scale-110 transition duration-300"
+              >
+                <i class="fas fa-phone-alt"></i>
               </div>
-
-              <div class="flex items-start">
-                <div
-                  class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4"
+              <div>
+                <h4 class="text-lg font-bold text-gray-800 mb-1">Phone</h4>
+                <a
+                  href="tel:+919059929442"
+                  class="text-blue-600 hover:underline"
                 >
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <div>
-                  <h4 class="text-lg font-bold text-gray-800 mb-2">Email</h4>
-                  <p class="text-gray-600">
-                    pruthineeglohive@gmail.com
-                  </p>
-                </div>
+                  +91 9059929442
+                </a>
+              </div>
+            </div>
+
+            <!-- Email Card -->
+            <div
+              class="flex items-start bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition duration-300"
+            >
+              <div
+                class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4 transform hover:scale-110 transition duration-300"
+              >
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-gray-800 mb-1">Email</h4>
+                <a
+                  href="mailto:pruthineeglohive@gmail.com"
+                  class="text-blue-600 hover:underline break-all"
+                >
+                  pruthineeglohive@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition duration-300"
+            >
+              <div
+                class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4 transform hover:scale-110 transition duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-gray-800 mb-1">Instagram</h4>
+                <a
+                  href="https://www.instagram.com/pruthinee_glohive?igsh=bGI5eGg2ZmtyZHNs&utm_source=qr"
+                  target="_blank"
+                  class="text-blue-600 hover:underline break-all"
+                >
+                  @pruthinee_glohive
+                </a>
               </div>
             </div>
           </div>
 
-          <div class="md:w-1/2">
-            <div class="bg-light rounded-xl p-8">
-              <h3 class="text-2xl font-bold text-gray-800 mb-6">
-                Send Us a Message
-              </h3>
-              <form>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
-                  </div>
-                </div>
-                <div class="mb-6">
-                  <input
-                    type="text"
-                    placeholder="Subject"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                </div>
-                <div class="mb-6">
-                  <textarea
-                    placeholder="Your Message"
-                    rows="5"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition duration-300"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
+          <!-- Contact Form -->
+          <div
+            class="md:w-1/2 bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300 animate-fade-in-up"
+          >
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">
+              Send Us a Feedback
+            </h3>
+            <form
+              action="mailto:pruthineeglohive@gmail.com"
+              method="POST"
+              enctype="text/plain"
+            >
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <input
+                  type="text"
+                  name="Your Name"
+                  placeholder="Your Name"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <input
+                  type="email"
+                  name="Your Email"
+                  placeholder="Your Email"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+              <input
+                type="text"
+                name="Subject"
+                placeholder="Subject"
+                required
+                class="w-full mb-6 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <textarea
+                name="Message"
+                placeholder="Your Message"
+                rows="5"
+                required
+                class="w-full mb-6 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              ></textarea>
+              <button
+                type="submit"
+                class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition duration-300"
+              >
+                Send Message
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -922,25 +1248,31 @@
             </p>
             <div class="flex space-x-4">
               <a
-                href="#"
+                href="https://wa.link/dctr08"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition duration-300"
               >
-                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-whatsapp"></i>
               </a>
               <a
-                href="#"
+                href="mailto:pruthineeglohive@gmail.com"
                 class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition duration-300"
               >
-                <i class="fab fa-twitter"></i>
+                <i class="fas fa-envelope"></i>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/pruthinee_glohive?igsh=bGI5eGg2ZmtyZHNs&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition duration-300"
               >
                 <i class="fab fa-instagram"></i>
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/pruthinee-glohive-consultancy-044034369/"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition duration-300"
               >
                 <i class="fab fa-linkedin-in"></i>
@@ -1068,81 +1400,6 @@
       </div>
     </footer>
 
-    <script>
-      // Mobile menu toggle
-      const mobileMenuButton = document.getElementById("mobile-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      mobileMenuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      // Close mobile menu when clicking outside
-      document.addEventListener("click", (event) => {
-        if (
-          !mobileMenu.contains(event.target) &&
-          !mobileMenuButton.contains(event.target)
-        ) {
-          mobileMenu.classList.add("hidden");
-        }
-      });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            window.scrollTo({
-              top: target.offsetTop - 80,
-              behavior: "smooth",
-            });
-
-            // Close mobile menu if open
-            mobileMenu.classList.add("hidden");
-          }
-        });
-      });
-
-      // Active nav link indicator
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      window.addEventListener("scroll", () => {
-        let current = "";
-
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-
-          if (pageYOffset >= sectionTop - 100) {
-            current = section.getAttribute("id");
-          }
-        });
-
-        navLinks.forEach((link) => {
-          link.classList.remove("active-nav");
-          if (link.getAttribute("href").includes(current)) {
-            link.classList.add("active-nav");
-          }
-        });
-      });
-    </script>
-
     <!-- Tailwind animation (add to global CSS or Tailwind config if using custom animations) -->
-    <style>
-      @keyframes marquee {
-        0% {
-          transform: translateX(0%);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-      .animate-marquee {
-        animation: marquee 10s linear infinite;
-      }
-    </style>
   </body>
 </html>
