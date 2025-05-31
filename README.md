@@ -1,2 +1,0 @@
-# mediRoute
-Client Project Demo

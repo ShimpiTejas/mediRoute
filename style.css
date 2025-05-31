@@ -1,99 +1,222 @@
+/* CSS: Part 1 */
 .hero-bg {
-    background: linear-gradient(
-        rgba(10, 40, 100, 0.85),
-        rgba(10, 40, 100, 0.85)
-      ),
-      url("./heroBg.png");
-    background-size: cover;
-    background-position: center;
-    height: 750px;
-  }
+  background: linear-gradient(rgba(10, 40, 100, 0.85), rgba(10, 40, 100, 0.85),
+    url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
 
-  .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-  }
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
 
-  .testimonial-card {
-    transition: all 0.3s ease;
-  }
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #1a56db;
+  transition: width 0.3s;
+}
 
-  .testimonial-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-  }
+.nav-link:hover::after {
+  width: 100%;
+}
 
-  .stat-card {
-    transition: all 0.3s ease;
-  }
+.active-nav::after {
+  width: 100%;
+}
 
-  .stat-card:hover {
-    transform: translateY(-3px);
-  }
+.social-icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background: #374151;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
 
-  .nav-link::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: white;
-    transition: width 0.3s;
-  }
+.social-icon:hover {
+  background: #1a56db;
+  transform: translateY(-3px);
+}
 
-  .nav-link:hover::after {
+.footer-link {
+  color: #9ca3af;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+/* CSS: Part 2 */
+/* Testimonial card styling */
+.testimonial-card {
+  transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Stat card styling */
+.stat-card {
+  transition: all 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Mobile menu animations */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+#mobile-menu.show {
+  max-height: 1000px; /* Adjust based on content */
+}
+
+/* Dropdown animations */
+.mobile-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.mobile-dropdown.open {
+  max-height: 500px; /* Adjust based on content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-bg {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  
+  .hero-bg .container {
+    flex-direction: column;
+  }
+  
+  .hero-bg .md\:w-1\/2 {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .service-card {
     width: 100%;
   }
-
-  .active-nav::after {
+  
+  .contact-section {
+    flex-direction: column;
+  }
+  
+  .contact-section > div {
     width: 100%;
   }
+}
 
-  /* //remove */
-
-
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+@media (max-width: 480px) {
+  .hero-bg {
+    padding-top: 80px;
   }
-  .animate-marquee {
-    animation: marquee 10s linear infinite;
+  
+  .hero-content h1 {
+    font-size: 2rem;
   }
-
-
-  /* remove */
-
-
-@keyframes fadeInDown {
-from {
-  opacity: 0;
-  transform: translateY(-20px);
-}
-to {
-  opacity: 1;
-  transform: translateY(0);
-}
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-@keyframes fadeInUp {
-from {
-  opacity: 0;
-  transform: translateY(20px);
-}
-to {
-  opacity: 1;
-  transform: translateY(0);
-}
-}
+.service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
 
-.animate-fade-in-down {
-animation: fadeInDown 1s ease-out;
-}
+      .testimonial-card {
+        transition: all 0.3s ease;
+      }
 
-.animate-fade-in-up {
-animation: fadeInUp 1s ease-out;
-}
+      .testimonial-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      .stat-card {
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-3px);
+      }
+
+      /* <style>
+      /* Combined styles 
+      .hero-bg {
+        background: linear-gradient(
+            rgba(10, 40, 100, 0.85),
+            rgba(10, 40, 100, 0.85)
+          ),
+          url(
+            "https://media.istockphoto.com/id/1319031310/photo/doctor-writing-a-medical-prescription.jpg?s=612x612&w=0&k=20&c=DWZGM8lBb5Bun7cbxhKT1ruVxRC_itvFzA9jxgoA0N8="
+          );
+        background-size: cover;
+        background-position: center;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #1a56db;
+        transition: width 0.3s;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .active-nav::after {
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .hero-bg {
+          padding-top: 100px;
+          padding-bottom: 50px;
+        }
+
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .hero-content p {
+          font-size: 1rem;
+        }
+      }
+    </style> */
+
+    
