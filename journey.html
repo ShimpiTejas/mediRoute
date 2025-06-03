@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Study Abroad Journey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        background: #f0f4f8;
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        padding: 32px 24px;
+        position: relative;
+      }
+
+      h1 {
+        text-align: center;
+        color: #1e3a5f;
+        margin-bottom: 40px;
+      }
+
+      .step-container {
+        position: relative;
+        padding-left: 50px;
+      }
+
+      .step-line {
+        position: absolute;
+        left: 25px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: #d0e3ff;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .line-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #1a73e8;
+        animation: fillLine 4s linear forwards;
+      }
+
+      @keyframes fillLine {
+        0% {
+          height: 0%;
+        }
+        100% {
+          height: 100%;
+        }
+      }
+
+      ol#steps-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      ol#steps-list li {
+        position: relative;
+        margin: 30px 0;
+        padding: 16px 16px 16px 60px;
+        background: #eaf3ff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(44, 62, 80, 0.1);
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.7s ease;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      ol#steps-list li.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .step-number {
+        position: absolute;
+        left: -36px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: #1a73e8;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        z-index: 1;
+      }
+
+      .step-image {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        object-fit: cover;
+        background: #ffffff;
+        border: 2px solid #d0e3ff;
+      }
+
+      .step-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .step-title {
+        font-weight: bold;
+        font-size: 1.1em;
+        color: #1a5bb8;
+      }
+
+      .step-desc {
+        color: #444d56;
+        font-size: 0.95em;
+        margin-top: 4px;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 20px 12px;
+        }
+
+        .step-number {
+          width: 32px;
+          height: 32px;
+          font-size: 0.9rem;
+          left: -28px;
+        }
+
+        ol#steps-list li {
+          padding-left: 50px;
+        }
+
+        .step-image {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Study Abroad Journey</h1>
+      <div class="step-container">
+        <div class="step-line">
+          <div class="line-fill"></div>
+        </div>
+        <ol id="steps-list">
+          <li>
+            <div class="step-number">1</div>
+            <img
+              class="step-image"
+              src="https://img.icons8.com/color/48/compass.png"
+              alt="Discover"
+            />
+            <div class="step-text">
+              <span class="step-title">Discover</span>
+              <span class="step-desc"
+                >Explore study abroad options and countries</span
+              >
+            </div>
+          </li>
+          <li>
+            <div class="step-number">2</div>
+            <img
+              class="step-image"
+              src="https://img.icons8.com/color/48/conference-call.png"
+              alt="Counselling"
+            />
+            <div class="step-text">
+              <span class="step-title">Counselling</span>
+              <span class="step-desc">Get expert guidance on your journey</span>
+            </div>
+          </li>
+          <li>
+            <div class="step-number">3</div>
+            <img
+              class="step-image"
+              src="https://img.icons8.com/color/48/ok.png"
+              alt="Shortlist"
+            />
+            <div class="step-text">
+              <span class="step-title">Shortlist</span>
+              <span class="step-desc"
+                >Select your preferred universities & programs</span
+              >
+            </div>
+          </li>
+          <li>
+            <div class="step-number">4</div>
+            <img
+              class="step-image"
+              src="https://img.icons8.com/color/48/test-passed.png"
+              alt="Exams"
+            />
+            <div class="step-text">
+              <span class="step-title">Exams</span>
+              <span class="step-desc">Prepare for and take required tests</span>
+            </div>
+          </li>
+          <li>
+            <div class="step-number">5</div>
+            <img
+              class="step-image"
+              src="https://img.icons8.com/color/48/document.png"
+              alt="Application"
+            />
+            <div class="step-text">
+              <span class="step-title">Application</span>
+              <span class="step-desc">Submit your university applications</span>
+            </div>
+          </li>
+          <li>
+            <div class="step-number">6</div>
+            <img
+              class="step-image"
+              src="https://img.icons8.com/color/48/accept-database.png"
+              alt="Offer Letter"
+            />
+            <div class="step-text">
+              <span class="step-title">Offer Letter</span>
+              <span class="step-desc">Receive and accept your admission</span>
+            </div>
+          </li>
+          <li>
+            <div class="step-number">7</div>
+            <img
+              class="step-image"
+              src="https://img.icons8.com/color/48/money.png"
+              alt="Finance"
+            />
+            <div class="step-text">
+              <span class="step-title">Finance</span>
+              <span class="step-desc">Arrange funding and scholarships</span>
+            </div>
+          </li>
+          <li>
+            <div class="step-number">8</div>
+            <img
+              class="step-image"
+              src="https://img.icons8.com/color/48/passport.png"
+              alt="Visa"
+            />
+            <div class="step-text">
+              <span class="step-title">Visa</span>
+              <span class="step-desc">Process your study visa</span>
+            </div>
+          </li>
+          <li>
+            <div class="step-number">9</div>
+            <img
+              class="step-image"
+              src="https://img.icons8.com/color/48/airport.png"
+              alt="Travel"
+            />
+            <div class="step-text">
+              <span class="step-title">Travel</span>
+              <span class="step-desc">Plan and prepare for your journey</span>
+            </div>
+          </li>
+          <li>
+            <div class="step-number">10</div>
+            <img
+              class="step-image"
+              src="https://img.icons8.com/color/48/university.png"
+              alt="On Campus"
+            />
+            <div class="step-text">
+              <span class="step-title">On Campus</span>
+              <span class="step-desc">Begin your international education</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const steps = document.querySelectorAll("#steps-list li");
+        steps.forEach((step, idx) => {
+          setTimeout(() => {
+            step.classList.add("visible");
+          }, idx * 400);
+        });
+      });
+    </script>
+  </body>
+</html>
