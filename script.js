@@ -127,3 +127,22 @@ function toggleMobileDropdown(id) {
 //       this.reset();
 //     });
 // </script>
+
+const menuButton = document.getElementById("mobile-menu-button");
+const menu = document.getElementById("mobile-menu");
+const icon = document.getElementById("menu-icon");
+
+menuButton.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+  icon.classList.toggle("fa-bars");
+  icon.classList.toggle("fa-times");
+});
+
+// Close menu when link is clicked (optional but user-friendly)
+document.querySelectorAll("#mobile-menu a").forEach((link) => {
+  link.addEventListener("click", () => {
+    menu.classList.add("hidden");
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-bars");
+  });
+});
