@@ -2,156 +2,299 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title>Schedule a Free Consultation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MBBS Free Consultation</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
-        font-family: "Poppins", sans-serif;
-        background: linear-gradient(to right, #e0f7fa, #ffffff);
+        background: #f7f9fa;
+        font-family: "Segoe UI", Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
       }
-      .fade-in {
-        animation: fadeIn 1.2s ease-in-out both;
+      .form-container {
+        background: #fff;
+        padding: 2rem 2.5rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        width: 100%;
+        max-width: 410px;
+        margin: 2rem 0;
       }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      .form-container h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #172554;
+      }
+      .form-group {
+        margin-bottom: 1.1rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: 500;
+        color: #374151;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 0.6rem 0.8rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-size: 1rem;
+        background: #f9fafb;
+        transition: border 0.2s;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: #2563eb;
+        outline: none;
+      }
+      .form-group img {
+        max-width: 100%;
+        margin-top: 0.5rem;
+        border-radius: 8px;
+      }
+      .btn-submit {
+        width: 100%;
+        padding: 0.9rem;
+        background: linear-gradient(90deg, #2563eb, #1e40af);
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        border-radius: 6px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background 0.2s;
+        margin-top: 0.5rem;
+      }
+      .btn-submit:hover {
+        background: linear-gradient(90deg, #1e40af, #2563eb);
+      }
+      .success,
+      .error {
+        text-align: center;
+        margin-top: 1rem;
+        font-weight: 600;
+      }
+      .success {
+        color: #22c55e;
+      }
+      .error {
+        color: #ef4444;
       }
     </style>
   </head>
-  <body class="min-h-screen flex flex-col justify-center items-center p-4">
-    <div class="max-w-xl w-full bg-white rounded-2xl shadow-2xl p-8 fade-in">
-      <h2 class="text-3xl font-bold text-center text-[#131D4F] mb-6">
-        Schedule a Free Consultation
-      </h2>
-
-      <form
-        action="mailto:pruthineeglohive@gmail.com"
-        method="POST"
-        enctype="text/plain"
-        onsubmit="openModal(); return false;"
-      >
-        <div class="space-y-4">
-          <input
-            type="text"
-            name="Name"
-            placeholder="Name*"
-            required
-            class="w-full px-4 py-3 border rounded-lg placeholder-gray-500 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#131D4F]"
-          />
-
+  <body>
+    <div class="form-container">
+      <h2>Schedule a Free Consultation</h2>
+      <form id="consultForm" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required maxlength="60" />
+        </div>
+        <div class="form-group">
+          <label for="contact">Contact *</label>
           <input
             type="tel"
-            name="Contact"
-            placeholder="Contact*"
+            id="contact"
+            name="contact"
             required
-            class="w-full px-4 py-3 border rounded-lg placeholder-gray-500 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#131D4F]"
-          />
-
-          <input
-            type="text"
-            name="State"
-            placeholder="State*"
-            required
-            class="w-full px-4 py-3 border rounded-lg placeholder-gray-500 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#131D4F]"
-          />
-
-          <input
-            type="text"
-            name="District"
-            placeholder="District*"
-            required
-            class="w-full px-4 py-3 border rounded-lg placeholder-gray-500 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#131D4F]"
-          />
-
-          <select
-            name="Interest"
-            required
-            class="w-full px-4 py-3 border rounded-lg text-gray-800 bg-white focus:outline-none focus:ring-2 focus:ring-[#131D4F]"
-          >
-            <option disabled selected>
-              Interested in - Select your interest
-            </option>
-            <option>MBBS from Abroad</option>
-            <option>MBBS from Private College</option>
-          </select>
-
-          <input
-            type="text"
-            name="NEET Score"
-            placeholder="Last NEET score (if appeared)"
-            class="w-full px-4 py-3 border rounded-lg placeholder-gray-500 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#131D4F]"
-          />
-
-          <select
-            name="Country"
-            class="w-full px-4 py-3 border rounded-lg text-gray-800 bg-white focus:outline-none focus:ring-2 focus:ring-[#131D4F]"
-          >
-            <option disabled selected>
-              Which country are you interested in for MBBS?
-            </option>
-            <option>Russia</option>
-            <option>Georgia</option>
-            <option>Kyrgyzstan</option>
-            <option>Belarus</option>
-            <option>Uzbekistan</option>
-          </select>
-
-          <input
-            type="text"
-            name="Reference"
-            placeholder="Reference (e.g. friends, family etc.)"
-            class="w-full px-4 py-3 border rounded-lg placeholder-gray-500 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#131D4F]"
+            pattern="[0-9+ -]{8,15}"
+            maxlength="15"
           />
         </div>
+        <div class="form-group">
+          <label for="state">State *</label>
+          <select id="state" name="state" required>
+            <option value="">Select state</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="district">District *</label>
+          <select id="district" name="district" required>
+            <option value="">Select state first</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="interest">Interested In *</label>
+          <select id="interest" name="interest" required>
+            <option value="">Select your interest</option>
+            <option>MBBS from Private College</option>
+            <option>MBBS from Government College</option>
+            <option>MBBS Abroad</option>
+            <option>Other Medical Courses</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="neet">Last NEET Score (if appeared)</label>
+          <input
+            type="text"
+            id="neet"
+            name="neet"
+            maxlength="5"
+            placeholder="Enter score or N/A"
+          />
+        </div>
+        <div class="form-group">
+          <label for="country">Which country are you interested in?</label>
+          <select id="country" name="country">
+            <option value="">Select</option>
+            <option>India</option>
+            <option>Russia</option>
+            <option>Ukraine</option>
+            <option>Philippines</option>
+            <option>Bangladesh</option>
+            <option>No Idea/Want More Information</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="counsellor">Select Counsellor</label>
+          <select id="counsellor" name="counsellor">
+            <option value="">Choose your preferred counsellor</option>
+            <option>Dr. A. Sharma</option>
+            <option>Ms. P. Singh</option>
+            <option>Mr. R. Kumar</option>
+          </select>
+        </div>
 
-        <button
-          type="submit"
-          class="mt-6 w-full bg-[#131D4F] hover:bg-[#10163a] text-white font-bold py-3 px-6 rounded-lg transition duration-300"
-        >
-          REQUEST FREE CONSULTATION
+        <div class="form-group">
+          <label for="reference">Reference (e.g., friends, family etc.)</label>
+          <input type="text" id="reference" name="reference" maxlength="50" />
+        </div>
+        <div class="form-group">
+          <label for="image">Upload Document/Image</label>
+          <input type="file" id="image" name="image" accept="image/*" />
+          <img id="preview" style="display: none" alt="Preview" />
+        </div>
+        <button type="submit" class="btn-submit">
+          Request Free Consultation
         </button>
+        <div class="success" id="successMsg" style="display: none"></div>
+        <div class="error" id="errorMsg" style="display: none"></div>
       </form>
     </div>
 
-    <!-- Modal -->
-    <div
-      id="modal"
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
-    >
-      <div
-        class="bg-white p-8 rounded-2xl shadow-xl text-center animate-bounce"
-      >
-        <h3 class="text-xl font-bold text-green-600">Thank you!</h3>
-        <p class="text-gray-700 mt-2">
-          Your consultation request has been submitted.
-        </p>
-        <button
-          onclick="closeModal()"
-          class="mt-4 px-6 py-2 bg-[#131D4F] text-white rounded-lg hover:bg-[#10163a]"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
-      function openModal() {
-        document.getElementById("modal").classList.remove("hidden");
-      }
-      function closeModal() {
-        document.getElementById("modal").classList.add("hidden");
-      }
+      // Districts by state (sample, expand as needed)
+      const districts = {
+        Maharashtra: ["Mumbai", "Pune", "Nagpur", "Nashik", "Other"],
+        Karnataka: ["Bengaluru", "Mysuru", "Mangaluru", "Hubli", "Other"],
+        "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai", "Salem", "Other"],
+        Delhi: [
+          "North Delhi",
+          "South Delhi",
+          "East Delhi",
+          "West Delhi",
+          "Other",
+        ],
+        Other: ["Other"],
+      };
+
+      document.getElementById("state").addEventListener("change", function () {
+        const state = this.value;
+        const districtSelect = document.getElementById("district");
+        districtSelect.innerHTML = "";
+        if (districts[state]) {
+          districts[state].forEach((d) => {
+            const opt = document.createElement("option");
+            opt.value = d;
+            opt.textContent = d;
+            districtSelect.appendChild(opt);
+          });
+        } else {
+          const opt = document.createElement("option");
+          opt.value = "";
+          opt.textContent = "Select state first";
+          districtSelect.appendChild(opt);
+        }
+      });
+
+      // Image preview
+      document.getElementById("image").addEventListener("change", function (e) {
+        const file = e.target.files[0];
+        const preview = document.getElementById("preview");
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (evt) {
+            preview.src = evt.target.result;
+            preview.style.display = "block";
+          };
+          reader.readAsDataURL(file);
+        } else {
+          preview.style.display = "none";
+        }
+      });
+
+      // EmailJS initialization
+      emailjs.init("YOUR_USER_ID"); // <-- Replace with your EmailJS user ID
+
+      document
+        .getElementById("consultForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          document.getElementById("successMsg").style.display = "none";
+          document.getElementById("errorMsg").style.display = "none";
+
+          const form = this;
+          const formData = new FormData(form);
+
+          // Convert image to base64 if present
+          const fileInput = document.getElementById("image");
+          const file = fileInput.files[0];
+
+          function sendEmail(imageBase64 = null) {
+            const templateParams = {
+              name: formData.get("name"),
+              contact: formData.get("contact"),
+              state: formData.get("state"),
+              district: formData.get("district"),
+              interest: formData.get("interest"),
+              neet: formData.get("neet"),
+              country: formData.get("country"),
+              counsellor: formData.get("counsellor"),
+              reference: formData.get("reference"),
+              image: imageBase64 ? imageBase64 : "No image uploaded",
+            };
+
+            emailjs
+              .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+              .then(
+                function (response) {
+                  form.reset();
+                  document.getElementById("preview").style.display = "none";
+                  document.getElementById("successMsg").textContent =
+                    "Form submitted successfully!";
+                  document.getElementById("successMsg").style.display = "block";
+                },
+                function (error) {
+                  document.getElementById("errorMsg").textContent =
+                    "Submission failed. Please try again.";
+                  document.getElementById("errorMsg").style.display = "block";
+                }
+              );
+          }
+
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (evt) {
+              sendEmail(evt.target.result);
+            };
+            reader.readAsDataURL(file);
+          } else {
+            sendEmail();
+          }
+        });
     </script>
   </body>
 </html>
