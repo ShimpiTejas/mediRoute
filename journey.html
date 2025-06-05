@@ -4,302 +4,630 @@
     <meta charset="UTF-8" />
     <title>Study Abroad Journey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
-      body {
-        background: #f0f4f8;
-        font-family: "Segoe UI", sans-serif;
+      * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: linear-gradient(135deg, #0f1a2e, #1d2e4b);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #fff;
+        min-height: 100vh;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .container {
-        max-width: 600px;
-        margin: 50px auto;
-        background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-        padding: 32px 24px;
+        max-width: 800px;
+        width: 100%;
+        margin: 30px auto;
         position: relative;
+        z-index: 1;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+        padding: 0 20px;
       }
 
       h1 {
-        text-align: center;
-        color: #1e3a5f;
-        margin-bottom: 40px;
+        font-size: 3.2rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 4px 15px rgba(254, 180, 123, 0.2);
       }
 
-      .step-container {
+      .subtitle {
+        font-size: 1.2rem;
+        color: #a0b3d6;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .timeline {
         position: relative;
-        padding-left: 50px;
+        padding: 30px 0;
       }
 
-      .step-line {
+      /* Vertical line */
+      .timeline::before {
+        content: "";
         position: absolute;
-        left: 25px;
         top: 0;
         bottom: 0;
-        width: 3px;
-        background: #d0e3ff;
-        z-index: 0;
+        width: 4px;
+        background: linear-gradient(to bottom, #ff7e5f, #feb47b, #4a6fa5);
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+        z-index: -1;
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 60px;
+        width: calc(50% - 40px);
+        display: flex;
+        perspective: 1000px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .timeline-item:nth-child(odd) {
+        left: 0;
+        animation: fadeInLeft 0.8s forwards;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: calc(50% + 40px);
+        animation: fadeInRight 0.8s forwards;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content {
+        margin-left: auto;
+        text-align: right;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content {
+        text-align: left;
+      }
+
+      .timeline-content {
+        background: rgba(29, 46, 75, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 25px;
+        width: 100%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(74, 111, 165, 0.4);
+        transition: all 0.4s ease;
+        position: relative;
         overflow: hidden;
       }
 
-      .line-fill {
+      .timeline-content::before {
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        background: #1a73e8;
-        animation: fillLine 4s linear forwards;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
       }
 
-      @keyframes fillLine {
-        0% {
-          height: 0%;
-        }
-        100% {
-          height: 100%;
-        }
-      }
-
-      ol#steps-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      ol#steps-list li {
-        position: relative;
-        margin: 30px 0;
-        padding: 16px 16px 16px 60px;
-        background: #eaf3ff;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(44, 62, 80, 0.1);
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.7s ease;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      ol#steps-list li.visible {
-        opacity: 1;
-        transform: translateY(0);
+      .timeline-content:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.2);
       }
 
       .step-number {
         position: absolute;
-        left: -36px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        background-color: #1a73e8;
-        color: white;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #ff7e5f, #feb47b);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        font-size: 1.1rem;
-        z-index: 1;
+        font-size: 1.3rem;
+        color: #1d2e4b;
+        box-shadow: 0 5px 15px rgba(254, 180, 123, 0.4);
       }
 
-      .step-image {
-        width: 40px;
-        height: 40px;
-        flex-shrink: 0;
-        border-radius: 8px;
-        object-fit: cover;
-        background: #ffffff;
-        border: 2px solid #d0e3ff;
+      .timeline-item:nth-child(odd) .step-number {
+        right: -70px;
+        top: 20px;
       }
 
-      .step-text {
+      .timeline-item:nth-child(even) .step-number {
+        left: -70px;
+        top: 20px;
+      }
+
+      .step-header {
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .step-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #4a6fa5, #1d2e4b);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        flex-shrink: 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .step-icon i {
+        font-size: 1.6rem;
+        color: #feb47b;
       }
 
       .step-title {
-        font-weight: bold;
-        font-size: 1.1em;
-        color: #1a5bb8;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #feb47b;
       }
 
       .step-desc {
-        color: #444d56;
-        font-size: 0.95em;
-        margin-top: 4px;
+        color: #c5d0e6;
+        line-height: 1.6;
+        font-size: 1.05rem;
       }
 
-      @media (max-width: 600px) {
-        .container {
-          padding: 20px 12px;
+      .timeline-item:nth-child(odd) .step-header {
+        justify-content: flex-end;
+      }
+
+      .timeline-item:nth-child(odd) .step-icon {
+        margin-right: 0;
+        margin-left: 15px;
+        order: 1;
+      }
+
+      /* Animations */
+      @keyframes fadeInLeft {
+        to {
+          opacity: 1;
+          transform: translateX(0) translateY(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        to {
+          opacity: 1;
+          transform: translateX(0) translateY(0);
+        }
+      }
+
+      .timeline-item.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .timeline-item:nth-child(odd) {
+        transform: translateX(-100px) translateY(30px);
+      }
+
+      .timeline-item:nth-child(even) {
+        transform: translateX(100px) translateY(30px);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .timeline::before {
+          left: 30px;
         }
 
-        .step-number {
-          width: 32px;
-          height: 32px;
-          font-size: 0.9rem;
-          left: -28px;
+        .timeline-item {
+          width: calc(100% - 70px);
+          margin-left: 70px;
         }
 
-        ol#steps-list li {
-          padding-left: 50px;
+        .timeline-item:nth-child(even),
+        .timeline-item:nth-child(odd) {
+          left: 0;
+          animation: fadeInLeft 0.8s forwards;
         }
 
-        .step-image {
-          width: 32px;
-          height: 32px;
+        .timeline-item:nth-child(odd) .timeline-content,
+        .timeline-item:nth-child(even) .timeline-content {
+          text-align: left;
         }
+
+        .timeline-item:nth-child(even) .step-number,
+        .timeline-item:nth-child(odd) .step-number {
+          left: -70px;
+          right: auto;
+        }
+
+        .timeline-item:nth-child(odd) .step-header {
+          justify-content: flex-start;
+        }
+
+        .timeline-item:nth-child(odd) .step-icon {
+          order: 0;
+          margin-left: 0;
+          margin-right: 15px;
+        }
+      }
+
+      /* Background decoration */
+      .background-elements {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(74, 111, 165, 0.1);
+      }
+
+      .circle:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        top: 10%;
+        left: 10%;
+        animation: float 15s infinite ease-in-out;
+      }
+
+      .circle:nth-child(2) {
+        width: 200px;
+        height: 200px;
+        bottom: 20%;
+        right: 15%;
+        animation: float 18s infinite ease-in-out;
+        animation-delay: -5s;
+      }
+
+      .circle:nth-child(3) {
+        width: 150px;
+        height: 150px;
+        top: 40%;
+        right: 20%;
+        animation: float 12s infinite ease-in-out;
+        animation-delay: -2s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+          transform: translate(20px, 30px) rotate(90deg);
+        }
+        50% {
+          transform: translate(0, 60px) rotate(180deg);
+        }
+        75% {
+          transform: translate(-30px, 20px) rotate(270deg);
+        }
+      }
+
+      /* Progress bar */
+      .progress-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: rgba(29, 46, 75, 0.5);
+        z-index: 1000;
+      }
+
+      .progress-bar {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        transition: width 0.3s ease;
+      }
+
+      /* Scroll to top button */
+      .scroll-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ff7e5f, #feb47b);
+        color: #1d2e4b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 5px 20px rgba(254, 180, 123, 0.4);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        z-index: 100;
+      }
+
+      .scroll-top.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scroll-top:hover {
+        transform: translateY(-5px);
       }
     </style>
   </head>
   <body>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
     <div class="container">
-      <h1>Study Abroad Journey</h1>
-      <div class="step-container">
-        <div class="step-line">
-          <div class="line-fill"></div>
-        </div>
-        <ol id="steps-list">
-          <li>
+      <div class="header">
+        <h1>Study Abroad Journey</h1>
+        <p class="subtitle">
+          Your roadmap to international education. Follow these steps to make
+          your study abroad dreams a reality.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
             <div class="step-number">1</div>
-            <img
-              class="step-image"
-              src="https://img.icons8.com/color/48/compass.png"
-              alt="Discover"
-            />
-            <div class="step-text">
-              <span class="step-title">Discover</span>
-              <span class="step-desc"
-                >Explore study abroad options and countries</span
-              >
+            <div class="step-header">
+              <div class="step-icon">
+                <i class="fas fa-globe-americas"></i>
+              </div>
+              <div>
+                <div class="step-title">Discover</div>
+                <div class="step-desc">
+                  Explore study abroad options and countries
+                </div>
+              </div>
             </div>
-          </li>
-          <li>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
             <div class="step-number">2</div>
-            <img
-              class="step-image"
-              src="https://img.icons8.com/color/48/conference-call.png"
-              alt="Counselling"
-            />
-            <div class="step-text">
-              <span class="step-title">Counselling</span>
-              <span class="step-desc">Get expert guidance on your journey</span>
+            <div class="step-header">
+              <div class="step-icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <div>
+                <div class="step-title">Counselling</div>
+                <div class="step-desc">Get expert guidance on your journey</div>
+              </div>
             </div>
-          </li>
-          <li>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
             <div class="step-number">3</div>
-            <img
-              class="step-image"
-              src="https://img.icons8.com/color/48/ok.png"
-              alt="Shortlist"
-            />
-            <div class="step-text">
-              <span class="step-title">Shortlist</span>
-              <span class="step-desc"
-                >Select your preferred universities & programs</span
-              >
+            <div class="step-header">
+              <div class="step-icon">
+                <i class="fas fa-list-check"></i>
+              </div>
+              <div>
+                <div class="step-title">Shortlist</div>
+                <div class="step-desc">
+                  Select your preferred universities & programs
+                </div>
+              </div>
             </div>
-          </li>
-          <li>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
             <div class="step-number">4</div>
-            <img
-              class="step-image"
-              src="https://img.icons8.com/color/48/test-passed.png"
-              alt="Exams"
-            />
-            <div class="step-text">
-              <span class="step-title">Exams</span>
-              <span class="step-desc">Prepare for and take required tests</span>
+            <div class="step-header">
+              <div class="step-icon">
+                <i class="fas fa-file-pen"></i>
+              </div>
+              <div>
+                <div class="step-title">Exams</div>
+                <div class="step-desc">Prepare for and take required tests</div>
+              </div>
             </div>
-          </li>
-          <li>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
             <div class="step-number">5</div>
-            <img
-              class="step-image"
-              src="https://img.icons8.com/color/48/document.png"
-              alt="Application"
-            />
-            <div class="step-text">
-              <span class="step-title">Application</span>
-              <span class="step-desc">Submit your university applications</span>
+            <div class="step-header">
+              <div class="step-icon">
+                <i class="fas fa-file-signature"></i>
+              </div>
+              <div>
+                <div class="step-title">Application</div>
+                <div class="step-desc">Submit your university applications</div>
+              </div>
             </div>
-          </li>
-          <li>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
             <div class="step-number">6</div>
-            <img
-              class="step-image"
-              src="https://img.icons8.com/color/48/accept-database.png"
-              alt="Offer Letter"
-            />
-            <div class="step-text">
-              <span class="step-title">Offer Letter</span>
-              <span class="step-desc">Receive and accept your admission</span>
+            <div class="step-header">
+              <div class="step-icon">
+                <i class="fas fa-envelope-open-text"></i>
+              </div>
+              <div>
+                <div class="step-title">Offer Letter</div>
+                <div class="step-desc">Receive and accept your admission</div>
+              </div>
             </div>
-          </li>
-          <li>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
             <div class="step-number">7</div>
-            <img
-              class="step-image"
-              src="https://img.icons8.com/color/48/money.png"
-              alt="Finance"
-            />
-            <div class="step-text">
-              <span class="step-title">Finance</span>
-              <span class="step-desc">Arrange funding and scholarships</span>
+            <div class="step-header">
+              <div class="step-icon">
+                <i class="fas fa-money-bill-wave"></i>
+              </div>
+              <div>
+                <div class="step-title">Finance</div>
+                <div class="step-desc">Arrange funding and scholarships</div>
+              </div>
             </div>
-          </li>
-          <li>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
             <div class="step-number">8</div>
-            <img
-              class="step-image"
-              src="https://img.icons8.com/color/48/passport.png"
-              alt="Visa"
-            />
-            <div class="step-text">
-              <span class="step-title">Visa</span>
-              <span class="step-desc">Process your study visa</span>
+            <div class="step-header">
+              <div class="step-icon">
+                <i class="fas fa-passport"></i>
+              </div>
+              <div>
+                <div class="step-title">Visa</div>
+                <div class="step-desc">Process your study visa</div>
+              </div>
             </div>
-          </li>
-          <li>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
             <div class="step-number">9</div>
-            <img
-              class="step-image"
-              src="https://img.icons8.com/color/48/airport.png"
-              alt="Travel"
-            />
-            <div class="step-text">
-              <span class="step-title">Travel</span>
-              <span class="step-desc">Plan and prepare for your journey</span>
+            <div class="step-header">
+              <div class="step-icon">
+                <i class="fas fa-plane-departure"></i>
+              </div>
+              <div>
+                <div class="step-title">Travel</div>
+                <div class="step-desc">Plan and prepare for your journey</div>
+              </div>
             </div>
-          </li>
-          <li>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
             <div class="step-number">10</div>
-            <img
-              class="step-image"
-              src="https://img.icons8.com/color/48/university.png"
-              alt="On Campus"
-            />
-            <div class="step-text">
-              <span class="step-title">On Campus</span>
-              <span class="step-desc">Begin your international education</span>
+            <div class="step-header">
+              <div class="step-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div>
+                <div class="step-title">On Campus</div>
+                <div class="step-desc">Begin your international education</div>
+              </div>
             </div>
-          </li>
-        </ol>
+          </div>
+        </div>
       </div>
     </div>
 
+    <div class="background-elements">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+
+    <div class="scroll-top" id="scrollTop">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const steps = document.querySelectorAll("#steps-list li");
-        steps.forEach((step, idx) => {
-          setTimeout(() => {
-            step.classList.add("visible");
-          }, idx * 400);
-        });
+      document.addEventListener('DOMContentLoaded', function() {
+          // Get all timeline items
+          const timelineItems = document.querySelectorAll('.timeline-item');
+
+          // Function to check if element is in viewport
+          function isInViewport(element) {
+              const rect = element.getBoundingClientRect();
+              return (
+                  rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                  rect.bottom >= 0
+              );
+          }
+
+          // Function to handle scroll animations
+          function handleScroll() {
+              timelineItems.forEach(item => {
+                  if (isInViewport(item) {
+                      item.classList.add('animate');
+                  }
+              });
+
+              // Scroll to top button visibility
+              const scrollTopBtn = document.getElementById('scrollTop');
+              if (window.pageYOffset > 300) {
+                  scrollTopBtn.classList.add('visible');
+              } else {
+                  scrollTopBtn.classList.remove('visible');
+              }
+
+              // Progress bar
+              const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+              const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+              const scrolled = (winScroll / height) * 100;
+              document.getElementById('progressBar').style.width = scrolled + "%";
+          }
+
+          // Initial check on page load
+          handleScroll();
+
+          // Add scroll event listener
+          window.addEventListener('scroll', handleScroll);
+
+          // Scroll to top functionality
+          document.getElementById('scrollTop').addEventListener('click', () => {
+              window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+              });
+          });
+
+          // Add hover effect to timeline items
+          timelineItems.forEach(item => {
+              item.addEventListener('mouseenter', () => {
+                  item.querySelector('.timeline-content').style.transform = 'translateY(-8px)';
+              });
+
+              item.addEventListener('mouseleave', () => {
+                  item.querySelector('.timeline-content').style.transform = 'translateY(0)';
+              });
+          });
       });
     </script>
   </body>
